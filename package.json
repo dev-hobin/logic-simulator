@@ -5,8 +5,15 @@
   "author": "Hobin Jang",
   "license": "MIT",
   "packageManager": "yarn@4.0.2",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "run clean && run typecheck && tsup src/index.ts --format esm,cjs",
+    "clean": "rm -rf dist"
+  },
   "devDependencies": {
+    "@types/node": "^20.10.4",
     "prettier": "^3.1.1",
+    "tsup": "^8.0.1",
     "typescript": "^5.3.3"
   }
 }
