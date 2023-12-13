@@ -1,17 +1,25 @@
 {
-  "name": "logic-simulator",
+  "name": "@hobin/logic-simulator-test",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Hobin Jang",
   "license": "MIT",
+  "bin": {
+    "create-vite": "index.js"
+  },
+  "files": [
+    "index.js",
+    "dist"
+  ],
   "packageManager": "yarn@4.0.2",
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "build": "run clean && run typecheck && tsup src/index.ts --format esm,cjs",
-    "clean": "rm -rf dist"
+    "build": "run typecheck && tsup",
+    "dev": "run typecheck && tsup --watch"
   },
   "devDependencies": {
     "@types/node": "^20.10.4",
+    "commander": "^11.1.0",
     "prettier": "^3.1.1",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3"

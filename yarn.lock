@@ -580,6 +580,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"commander@npm:^11.1.0":
+  version: 11.1.0
+  resolution: "commander@npm:11.1.0"
+  checksum: 13cc6ac875e48780250f723fb81c1c1178d35c5decb1abb1b628b3177af08a8554e76b2c0f29de72d69eef7c864d12613272a71fabef8047922bc622ab75a179
+  languageName: node
+  linkType: hard
+
 "commander@npm:^4.0.0":
   version: 4.1.1
   resolution: "commander@npm:4.1.1"
@@ -1130,9 +1137,12 @@ __metadata:
   resolution: "logic-simulator@workspace:."
   dependencies:
     "@types/node": "npm:^20.10.4"
+    commander: "npm:^11.1.0"
     prettier: "npm:^3.1.1"
     tsup: "npm:^8.0.1"
     typescript: "npm:^5.3.3"
+  bin:
+    create-vite: index.js
   languageName: unknown
   linkType: soft
 

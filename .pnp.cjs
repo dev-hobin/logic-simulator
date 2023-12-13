@@ -27,6 +27,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["@types/node", "npm:20.10.4"],\
+          ["commander", "npm:11.1.0"],\
           ["prettier", "npm:3.1.1"],\
           ["tsup", "virtual:16f698e6f8e37bfd739319fb6eb1801cfb4de7d88eb8524efd55f378d06beef11ece5372d1b24aea46587a4bf800df6ff3d5667719a6760a7b5c803fd3c19238#npm:8.0.1"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
@@ -744,6 +745,13 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["commander", [\
+      ["npm:11.1.0", {\
+        "packageLocation": "./.yarn/cache/commander-npm-11.1.0-56e979613c-13cc6ac875.zip/node_modules/commander/",\
+        "packageDependencies": [\
+          ["commander", "npm:11.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["npm:4.1.1", {\
         "packageLocation": "./.yarn/cache/commander-npm-4.1.1-22a0fe921b-84a76c08fe.zip/node_modules/commander/",\
         "packageDependencies": [\
@@ -1318,6 +1326,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["logic-simulator", "workspace:."],\
           ["@types/node", "npm:20.10.4"],\
+          ["commander", "npm:11.1.0"],\
           ["prettier", "npm:3.1.1"],\
           ["tsup", "virtual:16f698e6f8e37bfd739319fb6eb1801cfb4de7d88eb8524efd55f378d06beef11ece5372d1b24aea46587a4bf800df6ff3d5667719a6760a7b5c803fd3c19238#npm:8.0.1"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
