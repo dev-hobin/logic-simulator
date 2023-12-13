@@ -601,6 +601,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"create-logic-simulator@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "create-logic-simulator@workspace:."
+  dependencies:
+    "@types/node": "npm:^20.10.4"
+    commander: "npm:^11.1.0"
+    prettier: "npm:^3.1.1"
+    tsup: "npm:^8.0.1"
+    typescript: "npm:^5.3.3"
+  bin:
+    create-logic-simulator: index.js
+  languageName: unknown
+  linkType: soft
+
 "cross-spawn@npm:^7.0.0, cross-spawn@npm:^7.0.3":
   version: 7.0.3
   resolution: "cross-spawn@npm:7.0.3"
@@ -1131,20 +1145,6 @@ __metadata:
   checksum: fc48fb54ff7669f33bb32997cab9460757ee99fafaf72400b261c3e10fde21538e47d8cfcbe6a25a31bcb5b7b727c27d52626386fc2de24eb059a6d64a89cdf5
   languageName: node
   linkType: hard
-
-"logic-simulator@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "logic-simulator@workspace:."
-  dependencies:
-    "@types/node": "npm:^20.10.4"
-    commander: "npm:^11.1.0"
-    prettier: "npm:^3.1.1"
-    tsup: "npm:^8.0.1"
-    typescript: "npm:^5.3.3"
-  bin:
-    create-vite: index.js
-  languageName: unknown
-  linkType: soft
 
 "lru-cache@npm:^10.0.1, lru-cache@npm:^9.1.1 || ^10.0.0":
   version: 10.1.0

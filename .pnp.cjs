@@ -10,14 +10,14 @@ const RAW_RUNTIME_STATE =
   ],\
   "dependencyTreeRoots": [\
     {\
-      "name": "logic-simulator",\
+      "name": "create-logic-simulator",\
       "reference": "workspace:."\
     }\
   ],\
   "enableTopLevelFallback": true,\
   "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
   "fallbackExclusionList": [\
-    ["logic-simulator", ["workspace:."]]\
+    ["create-logic-simulator", ["workspace:."]]\
   ],\
   "fallbackPool": [\
   ],\
@@ -29,7 +29,7 @@ const RAW_RUNTIME_STATE =
           ["@types/node", "npm:20.10.4"],\
           ["commander", "npm:11.1.0"],\
           ["prettier", "npm:3.1.1"],\
-          ["tsup", "virtual:16f698e6f8e37bfd739319fb6eb1801cfb4de7d88eb8524efd55f378d06beef11ece5372d1b24aea46587a4bf800df6ff3d5667719a6760a7b5c803fd3c19238#npm:8.0.1"],\
+          ["tsup", "virtual:0e75ceeef0a3cbd0a0038d823d7f7f27fa55fb2430dfef925759ab18c7e385709de224428fd895ec03d73dc5aa6c2c9a3bc6e763a8fccb3979deae431b0177d0#npm:8.0.1"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
         "linkType": "SOFT"\
@@ -645,10 +645,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:196ee33e0d2e7f2479ff65873bf0b31743011c1e8c69e5f53653280465b539c47f863c91f3791524f6ec51d6f32038268fe9690826bb36f491194d8f222b5471#npm:4.0.2", {\
-        "packageLocation": "./.yarn/__virtual__/bundle-require-virtual-5b4a9f25af/0/cache/bundle-require-npm-4.0.2-b7283351ec-984735cfcb.zip/node_modules/bundle-require/",\
+      ["virtual:e6ec21064e7fd568c9cca96eacee36e59c7571be4cbbabd1cd13cddbd4e405ed03373a04f421bbe6f61cbd497fc6849dfb9f94e2a33085e4f76553ff93d2d644#npm:4.0.2", {\
+        "packageLocation": "./.yarn/__virtual__/bundle-require-virtual-37f481f0dd/0/cache/bundle-require-npm-4.0.2-b7283351ec-984735cfcb.zip/node_modules/bundle-require/",\
         "packageDependencies": [\
-          ["bundle-require", "virtual:196ee33e0d2e7f2479ff65873bf0b31743011c1e8c69e5f53653280465b539c47f863c91f3791524f6ec51d6f32038268fe9690826bb36f491194d8f222b5471#npm:4.0.2"],\
+          ["bundle-require", "virtual:e6ec21064e7fd568c9cca96eacee36e59c7571be4cbbabd1cd13cddbd4e405ed03373a04f421bbe6f61cbd497fc6849dfb9f94e2a33085e4f76553ff93d2d644#npm:4.0.2"],\
           ["@types/esbuild", null],\
           ["esbuild", "npm:0.19.9"],\
           ["load-tsconfig", "npm:0.2.5"]\
@@ -767,6 +767,20 @@ const RAW_RUNTIME_STATE =
           ["concat-map", "npm:0.0.1"]\
         ],\
         "linkType": "HARD"\
+      }]\
+    ]],\
+    ["create-logic-simulator", [\
+      ["workspace:.", {\
+        "packageLocation": "./",\
+        "packageDependencies": [\
+          ["create-logic-simulator", "workspace:."],\
+          ["@types/node", "npm:20.10.4"],\
+          ["commander", "npm:11.1.0"],\
+          ["prettier", "npm:3.1.1"],\
+          ["tsup", "virtual:0e75ceeef0a3cbd0a0038d823d7f7f27fa55fb2430dfef925759ab18c7e385709de224428fd895ec03d73dc5aa6c2c9a3bc6e763a8fccb3979deae431b0177d0#npm:8.0.1"],\
+          ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
+        ],\
+        "linkType": "SOFT"\
       }]\
     ]],\
     ["cross-spawn", [\
@@ -1320,20 +1334,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["logic-simulator", [\
-      ["workspace:.", {\
-        "packageLocation": "./",\
-        "packageDependencies": [\
-          ["logic-simulator", "workspace:."],\
-          ["@types/node", "npm:20.10.4"],\
-          ["commander", "npm:11.1.0"],\
-          ["prettier", "npm:3.1.1"],\
-          ["tsup", "virtual:16f698e6f8e37bfd739319fb6eb1801cfb4de7d88eb8524efd55f378d06beef11ece5372d1b24aea46587a4bf800df6ff3d5667719a6760a7b5c803fd3c19238#npm:8.0.1"],\
-          ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
-        ],\
-        "linkType": "SOFT"\
-      }]\
-    ]],\
     ["lru-cache", [\
       ["npm:10.1.0", {\
         "packageLocation": "./.yarn/cache/lru-cache-npm-10.1.0-f3d3a0f0ab-778bc8b262.zip/node_modules/lru-cache/",\
@@ -1705,10 +1705,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:196ee33e0d2e7f2479ff65873bf0b31743011c1e8c69e5f53653280465b539c47f863c91f3791524f6ec51d6f32038268fe9690826bb36f491194d8f222b5471#npm:4.0.2", {\
-        "packageLocation": "./.yarn/__virtual__/postcss-load-config-virtual-1b14ba2c06/0/cache/postcss-load-config-npm-4.0.2-319bcff9ca-3d7939acb3.zip/node_modules/postcss-load-config/",\
+      ["virtual:e6ec21064e7fd568c9cca96eacee36e59c7571be4cbbabd1cd13cddbd4e405ed03373a04f421bbe6f61cbd497fc6849dfb9f94e2a33085e4f76553ff93d2d644#npm:4.0.2", {\
+        "packageLocation": "./.yarn/__virtual__/postcss-load-config-virtual-8589650e85/0/cache/postcss-load-config-npm-4.0.2-319bcff9ca-3d7939acb3.zip/node_modules/postcss-load-config/",\
         "packageDependencies": [\
-          ["postcss-load-config", "virtual:196ee33e0d2e7f2479ff65873bf0b31743011c1e8c69e5f53653280465b539c47f863c91f3791524f6ec51d6f32038268fe9690826bb36f491194d8f222b5471#npm:4.0.2"],\
+          ["postcss-load-config", "virtual:e6ec21064e7fd568c9cca96eacee36e59c7571be4cbbabd1cd13cddbd4e405ed03373a04f421bbe6f61cbd497fc6849dfb9f94e2a33085e4f76553ff93d2d644#npm:4.0.2"],\
           ["@types/postcss", null],\
           ["@types/ts-node", null],\
           ["lilconfig", "npm:3.0.0"],\
@@ -2103,17 +2103,17 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:16f698e6f8e37bfd739319fb6eb1801cfb4de7d88eb8524efd55f378d06beef11ece5372d1b24aea46587a4bf800df6ff3d5667719a6760a7b5c803fd3c19238#npm:8.0.1", {\
-        "packageLocation": "./.yarn/__virtual__/tsup-virtual-196ee33e0d/0/cache/tsup-npm-8.0.1-f690188444-2869187881.zip/node_modules/tsup/",\
+      ["virtual:0e75ceeef0a3cbd0a0038d823d7f7f27fa55fb2430dfef925759ab18c7e385709de224428fd895ec03d73dc5aa6c2c9a3bc6e763a8fccb3979deae431b0177d0#npm:8.0.1", {\
+        "packageLocation": "./.yarn/__virtual__/tsup-virtual-e6ec21064e/0/cache/tsup-npm-8.0.1-f690188444-2869187881.zip/node_modules/tsup/",\
         "packageDependencies": [\
-          ["tsup", "virtual:16f698e6f8e37bfd739319fb6eb1801cfb4de7d88eb8524efd55f378d06beef11ece5372d1b24aea46587a4bf800df6ff3d5667719a6760a7b5c803fd3c19238#npm:8.0.1"],\
+          ["tsup", "virtual:0e75ceeef0a3cbd0a0038d823d7f7f27fa55fb2430dfef925759ab18c7e385709de224428fd895ec03d73dc5aa6c2c9a3bc6e763a8fccb3979deae431b0177d0#npm:8.0.1"],\
           ["@microsoft/api-extractor", null],\
           ["@swc/core", null],\
           ["@types/microsoft__api-extractor", null],\
           ["@types/postcss", null],\
           ["@types/swc__core", null],\
           ["@types/typescript", null],\
-          ["bundle-require", "virtual:196ee33e0d2e7f2479ff65873bf0b31743011c1e8c69e5f53653280465b539c47f863c91f3791524f6ec51d6f32038268fe9690826bb36f491194d8f222b5471#npm:4.0.2"],\
+          ["bundle-require", "virtual:e6ec21064e7fd568c9cca96eacee36e59c7571be4cbbabd1cd13cddbd4e405ed03373a04f421bbe6f61cbd497fc6849dfb9f94e2a33085e4f76553ff93d2d644#npm:4.0.2"],\
           ["cac", "npm:6.7.14"],\
           ["chokidar", "npm:3.5.3"],\
           ["debug", "virtual:4b12ba5111caf7e8338099bdbc7cb046a9f8e079a44e74d0c03dca469876e3071ebbe671c5e90ae6b78ae33e22c205fa5ed32169a4aabd1404b13c56d09986e1#npm:4.3.4"],\
@@ -2122,7 +2122,7 @@ const RAW_RUNTIME_STATE =
           ["globby", "npm:11.1.0"],\
           ["joycon", "npm:3.1.1"],\
           ["postcss", null],\
-          ["postcss-load-config", "virtual:196ee33e0d2e7f2479ff65873bf0b31743011c1e8c69e5f53653280465b539c47f863c91f3791524f6ec51d6f32038268fe9690826bb36f491194d8f222b5471#npm:4.0.2"],\
+          ["postcss-load-config", "virtual:e6ec21064e7fd568c9cca96eacee36e59c7571be4cbbabd1cd13cddbd4e405ed03373a04f421bbe6f61cbd497fc6849dfb9f94e2a33085e4f76553ff93d2d644#npm:4.0.2"],\
           ["resolve-from", "npm:5.0.0"],\
           ["rollup", "npm:4.8.0"],\
           ["source-map", "npm:0.8.0-beta.0"],\

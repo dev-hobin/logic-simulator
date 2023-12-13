@@ -1,12 +1,10 @@
 {
-  "name": "@hobin/logic-simulator-test",
+  "name": "create-logic-simulator",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "author": "Hobin Jang",
   "license": "MIT",
-  "bin": {
-    "create-vite": "index.js"
-  },
+  "bin": "index.js",
   "files": [
     "index.js",
     "dist"
