@@ -2,7 +2,6 @@
   "compilerOptions": {
     "lib": ["ESNext"],
     "module": "ESNext",
-    "target": "ES6",
 
     "strict": true,
     "esModuleInterop": true,

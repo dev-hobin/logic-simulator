@@ -27,8 +27,11 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["@types/node", "npm:20.10.4"],\
+          ["@types/prompts", "npm:2.4.9"],\
+          ["chalk", "npm:5.3.0"],\
           ["commander", "npm:11.1.0"],\
           ["prettier", "npm:3.1.1"],\
+          ["prompts", "npm:2.4.2"],\
           ["tsup", "virtual:0e75ceeef0a3cbd0a0038d823d7f7f27fa55fb2430dfef925759ab18c7e385709de224428fd895ec03d73dc5aa6c2c9a3bc6e763a8fccb3979deae431b0177d0#npm:8.0.1"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
@@ -498,6 +501,17 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@types/prompts", [\
+      ["npm:2.4.9", {\
+        "packageLocation": "./.yarn/cache/@types-prompts-npm-2.4.9-a99ca98ad4-22fe0da680.zip/node_modules/@types/prompts/",\
+        "packageDependencies": [\
+          ["@types/prompts", "npm:2.4.9"],\
+          ["@types/node", "npm:20.10.4"],\
+          ["kleur", "npm:3.0.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["abbrev", [\
       ["npm:2.0.0", {\
         "packageLocation": "./.yarn/cache/abbrev-npm-2.0.0-0eb38a17e5-f742a5a107.zip/node_modules/abbrev/",\
@@ -690,6 +704,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["chalk", [\
+      ["npm:5.3.0", {\
+        "packageLocation": "./.yarn/cache/chalk-npm-5.3.0-d181999efb-8297d436b2.zip/node_modules/chalk/",\
+        "packageDependencies": [\
+          ["chalk", "npm:5.3.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["chokidar", [\
       ["npm:3.5.3", {\
         "packageLocation": "./.yarn/cache/chokidar-npm-3.5.3-c5f9b0a56a-1076953093.zip/node_modules/chokidar/",\
@@ -775,8 +798,11 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["create-logic-simulator", "workspace:."],\
           ["@types/node", "npm:20.10.4"],\
+          ["@types/prompts", "npm:2.4.9"],\
+          ["chalk", "npm:5.3.0"],\
           ["commander", "npm:11.1.0"],\
           ["prettier", "npm:3.1.1"],\
+          ["prompts", "npm:2.4.2"],\
           ["tsup", "virtual:0e75ceeef0a3cbd0a0038d823d7f7f27fa55fb2430dfef925759ab18c7e385709de224428fd895ec03d73dc5aa6c2c9a3bc6e763a8fccb3979deae431b0177d0#npm:8.0.1"],\
           ["typescript", "patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"]\
         ],\
@@ -1298,6 +1324,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["kleur", [\
+      ["npm:3.0.3", {\
+        "packageLocation": "./.yarn/cache/kleur-npm-3.0.3-f6f53649a4-cd3a0b8878.zip/node_modules/kleur/",\
+        "packageDependencies": [\
+          ["kleur", "npm:3.0.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["lilconfig", [\
       ["npm:3.0.0", {\
         "packageLocation": "./.yarn/cache/lilconfig-npm-3.0.0-6931a31ed7-7f5ee7a658.zip/node_modules/lilconfig/",\
@@ -1754,6 +1789,17 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["prompts", [\
+      ["npm:2.4.2", {\
+        "packageLocation": "./.yarn/cache/prompts-npm-2.4.2-f5d25d5eea-16f1ac2977.zip/node_modules/prompts/",\
+        "packageDependencies": [\
+          ["prompts", "npm:2.4.2"],\
+          ["kleur", "npm:3.0.3"],\
+          ["sisteransi", "npm:1.0.5"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["punycode", [\
       ["npm:2.3.1", {\
         "packageLocation": "./.yarn/cache/punycode-npm-2.3.1-97543c420d-14f76a8206.zip/node_modules/punycode/",\
@@ -1892,6 +1938,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/signal-exit-npm-4.1.0-61fb957687-41602dce54.zip/node_modules/signal-exit/",\
         "packageDependencies": [\
           ["signal-exit", "npm:4.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["sisteransi", [\
+      ["npm:1.0.5", {\
+        "packageLocation": "./.yarn/cache/sisteransi-npm-1.0.5-af60cc0cfa-230ac975cc.zip/node_modules/sisteransi/",\
+        "packageDependencies": [\
+          ["sisteransi", "npm:1.0.5"]\
         ],\
         "linkType": "HARD"\
       }]\
