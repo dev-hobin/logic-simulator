@@ -1,7 +1,7 @@
 {
   "name": "create-logic-simulator",
   "type": "module",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "author": "Hobin Jang",
   "license": "MIT",
   "bin": "index.js",
