@@ -1,34 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { __unsafe_getAllOwnEventDescriptors } from 'xstate'
+import { useActor } from '@xstate/react'
+import { machine } from './machine'
+
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [state, send] = useActor(machine)
+
+  const nextEvents = __unsafe_getAllOwnEventDescriptors(state)
 
   return (
-    <>
+    <div>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <h1>{state.machine.id}</h1>
+        <h2>Current State: {JSON.stringify(state.value, null, 2)}</h2>
+        <h2>Context</h2>
+        <p>{JSON.stringify(state.context, null, 2)}</p>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+      <div>
+        <h2>{nextEvents.length > 1 ? 'Next possible events' : 'Next event'}</h2>
+        <div>
+          {nextEvents.map((event) => (
+            <button key={event} onClick={() => send?.({ type: event })}>
+              {event}
+            </button>
+          ))}
+        </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
