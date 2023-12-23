@@ -7,6 +7,14 @@ import {
 import { machine } from './machine'
 import './style.css'
 
+async function enableMocking() {
+  if (process.env.NODE_ENV !== 'development') {
+    return
+  }
+  const { worker } = await import('./mocks/browser')
+  return worker.start({ onUnhandledRequest: 'bypass' })
+}
+
 const renderer = new (class {
   #root: HTMLElement
   constructor(root: string) {
@@ -52,4 +60,6 @@ actor.subscribe((snapshot) => {
 })
 actor.start()
 
-renderer.render(actor.getSnapshot(), actor.send)
+enableMocking().then(() => {
+  renderer.render(actor.getSnapshot(), actor.send)
+})
