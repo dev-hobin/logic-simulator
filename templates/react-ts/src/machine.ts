@@ -1,9 +1,11 @@
 import { setup, fromPromise, assign } from 'xstate'
 
+type CustomError = { status: number; message: string }
+
 type Context = {
   controller: AbortController
   data: { message: string } | null
-  error: { status: string; error: string } | null
+  error: CustomError | null
 }
 
 type Events = { type: 'FETCH' } | { type: 'CANCEL' } | { type: 'REFETCH' }
@@ -13,11 +15,11 @@ const fetchLogic = fromPromise<{ message: string }, { signal: AbortSignal }>(
     const response = await fetch('/ping', {
       signal: input.signal,
     })
-    if (response.ok) {
-      return response.json()
-    } else {
-      return { status: response.status, error: response.statusText }
-    }
+
+    if (!response.ok)
+      throw { status: response.status, message: response.statusText }
+
+    return response.json()
   },
 )
 
@@ -57,8 +59,7 @@ export const machine = setup({
           target: 'fail',
           actions: [
             assign({
-              error: ({ event }) =>
-                event.error as { status: string; error: string },
+              error: ({ event }) => event.error as CustomError,
             }),
           ],
         },
@@ -77,6 +78,7 @@ export const machine = setup({
       },
     },
     fail: {
+      entry: [assign({ data: null })],
       on: {
         REFETCH: {
           target: 'loading',

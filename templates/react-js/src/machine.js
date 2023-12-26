@@ -4,11 +4,11 @@ const fetchLogic = fromPromise(async ({ input }) => {
   const response = await fetch('/ping', {
     signal: input.signal,
   })
-  if (response.ok) {
-    return response.json()
-  } else {
-    return { status: response.status, error: response.statusText }
-  }
+
+  if (!response.ok)
+    throw { status: response.status, message: response.statusText }
+
+  return response.json()
 })
 
 export const machine = setup({
@@ -62,6 +62,7 @@ export const machine = setup({
       },
     },
     fail: {
+      entry: [assign({ data: null })],
       on: {
         REFETCH: {
           target: 'loading',
