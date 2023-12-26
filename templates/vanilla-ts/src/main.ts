@@ -25,7 +25,9 @@ const renderer = new (class {
     snapshot: SnapshotFrom<typeof machine>,
     send: ActorRefFrom<typeof machine>['send'],
   ) {
-    const nextEvents = __unsafe_getAllOwnEventDescriptors(snapshot)
+    const nextEvents = __unsafe_getAllOwnEventDescriptors(snapshot).filter(
+      (v) => !v.startsWith('xstate.'),
+    )
     const eventButtons = nextEvents.reduce((html, ev) => {
       return `${html}<button id="${ev}" type="button">${ev}</button>`
     }, '')
@@ -35,7 +37,11 @@ const renderer = new (class {
         <h1>${snapshot.machine.id}</h1>
         <h2>Current State: ${JSON.stringify(snapshot.value, null, 2)}</h2>
         <h2>Context</h2>
-        <p>${JSON.stringify(snapshot.context, null, 2)}</p>
+        <p>${JSON.stringify(
+          { data: snapshot.context.data, error: snapshot.context.error },
+          null,
+          2,
+        )}</p>
         <div>
           <h2>${
             nextEvents.length > 1 ? 'Next possible events' : 'Next event'

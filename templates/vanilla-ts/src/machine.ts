@@ -1,30 +1,85 @@
-import { createMachine, assign } from 'xstate'
+import { setup, fromPromise, assign } from 'xstate'
 
 type Context = {
-  count: number
+  controller: AbortController
+  data: { message: string } | null
+  error: { status: string; error: string } | null
 }
 
-type Events = { type: 'INCREMENT' } | { type: 'DECREMENT' } | { type: 'RESET' }
+type Events = { type: 'FETCH' } | { type: 'CANCEL' } | { type: 'REFETCH' }
 
-export const machine = createMachine({
+const fetchLogic = fromPromise<{ message: string }, { signal: AbortSignal }>(
+  async ({ input }) => {
+    const response = await fetch('/ping', {
+      signal: input.signal,
+    })
+    if (response.ok) {
+      return response.json()
+    } else {
+      return { status: response.status, error: response.statusText }
+    }
+  },
+)
+
+export const machine = setup({
   types: {} as {
     context: Context
     events: Events
   },
-  id: 'counter',
+  actors: {
+    fetchLogic,
+  },
+}).createMachine({
+  id: 'fetchMachine',
   initial: 'idle',
-  context: { count: 0 },
+  context: { controller: new AbortController(), data: null, error: null },
   states: {
     idle: {
       on: {
-        INCREMENT: {
-          actions: assign({ count: ({ context }) => context.count + 1 }),
+        FETCH: {
+          target: 'loading',
         },
-        DECREMENT: {
-          actions: assign({ count: ({ context }) => context.count - 1 }),
+      },
+    },
+    loading: {
+      entry: [assign({ error: null })],
+      exit: [assign({ controller: new AbortController() })],
+      invoke: {
+        src: 'fetchLogic',
+        input: ({ context }) => ({ signal: context.controller.signal }),
+        onDone: {
+          target: 'success',
+          actions: assign({
+            data: ({ event }) => event.output,
+          }),
         },
-        RESET: {
-          actions: assign({ count: 0 }),
+        onError: {
+          target: 'fail',
+          actions: [
+            assign({
+              error: ({ event }) =>
+                event.error as { status: string; error: string },
+            }),
+          ],
+        },
+      },
+      on: {
+        CANCEL: {
+          target: 'idle',
+        },
+      },
+    },
+    success: {
+      on: {
+        REFETCH: {
+          target: 'loading',
+        },
+      },
+    },
+    fail: {
+      on: {
+        REFETCH: {
+          target: 'loading',
         },
       },
     },
