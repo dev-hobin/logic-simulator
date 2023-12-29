@@ -1,4 +1,5 @@
 import { createActor, __unsafe_getAllOwnEventDescriptors } from 'xstate'
+import { createBrowserInspector } from '@statelyai/inspect'
 import { machine } from './machine'
 import './style.css'
 
@@ -52,7 +53,11 @@ const renderer = new (class {
   }
 })('#app')
 
-const actor = createActor(machine)
+const actor = createActor(machine, {
+  inspect: createBrowserInspector({
+    url: 'https://stately.ai/registry/inspect',
+  }).inspect,
+})
 actor.subscribe((snapshot) => {
   renderer.render(snapshot, actor.send)
 })
