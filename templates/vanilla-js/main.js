@@ -54,9 +54,7 @@ const renderer = new (class {
 })('#app')
 
 const actor = createActor(machine, {
-  inspect: createBrowserInspector({
-    url: 'https://stately.ai/registry/inspect',
-  }).inspect,
+  inspect: createBrowserInspector().inspect,
 })
 actor.subscribe((snapshot) => {
   renderer.render(snapshot, actor.send)

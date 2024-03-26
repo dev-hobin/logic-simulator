@@ -9,5 +9,6 @@
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "Bundler"
   },
-  "exclude": ["templates"]
+  "include": ["src"],
+  "exclude": ["templates", "node_modules", "dist"]
 }

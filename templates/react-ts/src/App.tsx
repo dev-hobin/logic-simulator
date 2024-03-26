@@ -5,12 +5,10 @@ import { machine } from './machine'
 
 import './App.css'
 
+const { inspect } = createBrowserInspector()
+
 function App() {
-  const [state, send] = useActor(machine, {
-    inspect: createBrowserInspector({
-      url: 'https://stately.ai/registry/inspect',
-    }).inspect,
-  })
+  const [state, send] = useActor(machine, { inspect })
 
   const nextEvents = __unsafe_getAllOwnEventDescriptors(state).filter(
     (v) => !v.startsWith('xstate.'),
